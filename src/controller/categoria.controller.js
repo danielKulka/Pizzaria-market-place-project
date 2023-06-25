@@ -42,7 +42,7 @@ const updateCategoriaController = async (req, res) => {
 
 const deleteCategoriaController = async (req, res) => {
   try{
-    return res.status(200).send(await categoriaService.deleteCategoriaService(id));
+    return res.status(200).send(await categoriaService.deleteCategoriaService(req.params.id));
   }catch(err){
     console.log(`erro: ${err.message}`);
     return res.status(500).send({ message: `Erro inesperado, tente novamente`});
