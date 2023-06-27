@@ -1,3 +1,5 @@
+const objectId = require("mongoose").Types.ObjectId;
+
 const validaUsuario = (req, res, next) => {
   if(!req.body.nome){
     return res.status(400).send({ message: `O campo 'nome' precisa ser preenchido!`});
@@ -106,6 +108,10 @@ const validaCarrinho = (req, res, next) => {
       return res.status(400).send({ message: `O campo ${erros} precisa ser preenchido`});
     }
   }
+}
+
+const validaId = (req, res, next) => { 
+
 }
 
 module.exports = {
