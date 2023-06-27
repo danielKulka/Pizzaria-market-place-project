@@ -111,7 +111,11 @@ const validaCarrinho = (req, res, next) => {
 }
 
 const validaId = (req, res, next) => { 
-
+  if(objectId.isValid(req.params.id)){
+    return next();
+  }else{
+    return res.status(400).send({ message: `O ID não corresponde aos padroes necessarios`});
+  }
 }
 
 module.exports = {
@@ -119,5 +123,6 @@ module.exports = {
   validaProduto,
   validaCategoria,
   validaPedido,
-  validaCarrinho
+  validaCarrinho,
+  validaId
 }
