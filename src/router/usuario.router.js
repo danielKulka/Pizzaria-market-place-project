@@ -20,6 +20,6 @@ router.put("/update/:id", authMiddleware,validaId, validaUsuario, usuarioControl
 //rotas DELETE
 router.delete("/remove/:id", authMiddleware, validaId, usuarioController.removeUserController);
 router.delete("/removeAddress", authMiddleware, usuarioController.removeUserAddressController);
-router.delete("/removeFavProduct/:id ", authMiddleware, validaId, usuarioController.removeUserFavProductController);
+router.delete("/removeFavProduct/:id", authMiddleware, validaId, usuarioController.removeUserFavProductController);
 
 module.exports = router;

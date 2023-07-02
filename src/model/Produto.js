@@ -8,12 +8,12 @@ const ProdutoSchema = new mongoose.Schema({
   imagem: { type: String, required: true },
   categorias: [
     {
-      _id: { type: mongoose.Schema.Types.ObjectId, required: true, unique: true, ref: "categorias" },
+      _id: { type: mongoose.Schema.Types.ObjectId, unique: true, required: true, ref: "categorias" },
       createdAt: { type: Date, required: true, default: Date.now() }
     },
   ],
 });
 
-const Produto = mongoose.model("pizzas", ProdutoSchema);
+const Produto = mongoose.model("produtos", ProdutoSchema);
 
 module.exports = Produto;
