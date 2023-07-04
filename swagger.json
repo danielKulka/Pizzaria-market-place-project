@@ -438,8 +438,21 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "$ref":"#/components/schemas/UserAddress"
+                "type":"object",
+                "properties": {
+                  "rua": {
+                    "type": "string"
+                  },
+                  "numero": {
+                    "type": "number"
+                  },
+                  "complemento": {
+                    "type": "string"
+                  },
+                  "CEP": {
+                    "type": "string"
+                  }
+                }
               }
             }
           },
@@ -621,8 +634,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "$ref":"#/components/schemas/ProductFav"
+                "type": "object",             
+                "properties": {
+                  "_id": {
+                  "type": "string"
+                  }
+                }    
               }
             }
           },
